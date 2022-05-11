@@ -1,7 +1,7 @@
 <template>
   <div class='page-wrapper'>
     <header>
-      Login
+      Admin Login
     </header>
     <div class='login-form'>
       Login Form
@@ -10,5 +10,10 @@
 </template>
 
 <script>
-  export default {}
+  export default {
+    name: 'LoginPage',
+    methods: {
+
+    }
+  }
 </script>

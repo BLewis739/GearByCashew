@@ -79,4 +79,18 @@ header {
   background-color: #00365f;
 }
 
+.photo-container {
+  display: flex;
+  justify-content: center;
+}
+
+.detail-page-photo img {
+  max-width: 300px;
+  max-height: 300px;
+  margin: 10px;
+  border: #00365f solid 5px;
+  border-radius: 5px;
+
+}
+
 

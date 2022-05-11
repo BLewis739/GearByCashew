@@ -5,7 +5,7 @@
     </header>
     <div class='gallery-items-wrapper'>
     <div v-if=this.galleryItems class='all-cards'> 
-      <div :key="item.id" v-for="item in galleryItems">
+      <div :key="item.id" v-for="item in galleryItems" @click="navigateItem(item.id)">
         <GearCard :item="item"/>
       </div>
     </div>
@@ -23,7 +23,8 @@
   export default {
     name: 'GalleryPage',
     data: () => ({
-      galleryItems: []
+      galleryItems: [],
+      selectedItem: null
     }),
     components: {
       GearCard
@@ -35,6 +36,9 @@
       async getGalleryItems() {
         const res = await axios.get(`http://localhost:8000/galleryitems/`)
         this.galleryItems = res.data
+      },
+      navigateItem(itemId) {
+        this.$router.push(`/gallery/item/${itemId}`)
       }
     }
   }

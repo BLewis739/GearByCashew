@@ -1,7 +1,7 @@
 <template>
   <div class='card'>
     <div class='image-wrapper'>
-      <img :src="item.photoUrl"/>
+      <img :src="item.gallery_photo_items[0]"/>
     </div>
     <div class='info-wrapper'>
     </div>
@@ -11,6 +11,9 @@
 <script>
   export default {
     name: 'GearCard',
-    props: ['item']
+    props: ['item'],
+    methods: {
+
+    }
   }
 </script>

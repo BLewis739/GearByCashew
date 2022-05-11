@@ -9,6 +9,9 @@
   <div class="testimonials">
     Testimonials
   </div>
+  <div class="admin-link">
+    <router-link to="/login">Site Admin</router-link>
+  </div>
 </div>
 </template>
 

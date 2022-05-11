@@ -18,7 +18,11 @@ export default {
   name: 'App',
   components: {
     NavBar
-  }
+  },
+  data: () => ({
+    authenticated: false,
+    user: null
+  })
 }
 </script>
 
