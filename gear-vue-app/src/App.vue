@@ -20,8 +20,7 @@ export default {
     NavBar
   },
   data: () => ({
-    authenticated: false,
-    user: null
+
   })
 }
 </script>

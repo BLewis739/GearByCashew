@@ -23,8 +23,7 @@
   export default {
     name: 'GalleryPage',
     data: () => ({
-      galleryItems: [],
-      selectedItem: null
+      galleryItems: []
     }),
     components: {
       GearCard
