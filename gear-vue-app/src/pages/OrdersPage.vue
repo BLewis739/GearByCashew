@@ -85,7 +85,7 @@
           Complete all fields
         </div>
         <div v-if="selectedOrder">
-          <button>Delete Order</button>
+          <button @click="deleteOrder($event)">Delete Order</button>
         </div>
         <button @click="cancelOrder($event)">Cancel</button>
 
@@ -191,6 +191,12 @@
         this.newOrder.isComplete = order.isComplete
         this.showNewOrderForm = true
         this.selectedOrder = order.id
+      },
+      async deleteOrder(event) {
+        event.preventDefault()
+        await axios.delete(`http://localhost:8000/gearorders/${this.selectedOrder}`)
+        this.resetAll()
+        this.getOrders()
       },
       async handleUpdateSubmit(event) {
         event.preventDefault()
