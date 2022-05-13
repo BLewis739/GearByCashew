@@ -209,19 +209,6 @@
 
         await axios.post('http://localhost:8000/gearorders/', this.newOrder).then((res) => console.log(res.data))
       .catch((err) => console.log(err.data))
-        //  ({ await axios ********MOVE TO FRONT**********
-        //   method: 'post',
-        //   url: 'http://localhost:8000/gearorders/',
-        //   data: {
-        //     wrestler: this.newOrder.wrestler,
-        //     shortName: this.newOrder.shortName,
-        //     style: this.newOrder.style,
-        //     description: this.newOrder.description,
-        //     price: this.newOrder.price,
-        //     hasPaid: this.newOrder.hasPaid,
-        //     isComplete: this.newOrder.isComplete
-        //   }
-        // }).then(response => this.info = response.data)
         this.resetAll()
         this.getOrders()
       },
@@ -248,19 +235,7 @@
         }
         this.newOrder.price = parseInt(this.newOrder.price)
 
-        // for (let i=0;i<this.wrestlers.length;i++) {
-        //   if (this.newOrder.wrestler === this.wrestlers[i].name) {
-        //     this.newOrder.wrestler = this.wrestlers[i].id
-        //     break
-        //   }
-        // }
 
-        // for (let i=0;i<this.styles.length;i++) {
-        //   if (this.newOrder.style_id === this.styles[i].name) {
-        //     this.newOrder.style_id = this.styles[i].id
-        //     break
-        //   }
-        // }
       }
     }
   }
