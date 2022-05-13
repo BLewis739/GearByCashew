@@ -4,7 +4,8 @@
       Admin Login
     </header>
     <div v-if="isAuthenticated" class='log-out'>
-      <LogOut @handleLogOut="handleLogOut"/>
+      Click the button to log out
+      <LogOut @handleLogOut="handleLogOut" class="logout-button"/>
     </div>
     <div v-else class='login-form'>
       <form>
