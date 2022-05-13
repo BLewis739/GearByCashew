@@ -150,7 +150,12 @@
     },
     methods: {
       async getOrders() {
-        const res = await axios.get(`http://localhost:8000/gearorders/`)
+        const res = await axios.get(`http://localhost:8000/gearorders/`, 
+        {headers: {
+          "Authorization": "Bearer " + localStorage.getItem('access_token'),
+          "Content-Type": "application/json",
+          "accept": "application/json"
+        }})
         this.orders = res.data
       },
       toggleShowNewOrderForm() {
