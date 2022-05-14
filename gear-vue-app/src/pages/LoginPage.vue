@@ -65,7 +65,7 @@
       },
       async loginUser(event) {
         event.preventDefault()
-        await axios.post('http://localhost:8000/api/token/', 
+        await axios.post('https://cashew-gear-backend.herokuapp.com/api/token/', 
         this.loginCredentials)
         .then(res => {
           if (res.status === 200) {

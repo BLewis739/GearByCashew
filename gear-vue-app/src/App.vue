@@ -2,7 +2,10 @@
 <div id="app">
 <header>
   <div class='site-title'>
-  Gear by Cashew
+  Bump & Stitch
+    <div class='sub-heading'>
+      Custom Professional Wrestling Gear
+    </div>
   </div>
   <NavBar/>
 </header>
@@ -22,6 +25,8 @@ export default {
   },
   data: () => ({
   }),
+  mounted() {
+  },
   methods: {
 
   }

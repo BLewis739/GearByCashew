@@ -33,7 +33,7 @@
     },
     methods: {
       async getGalleryItems() {
-        const res = await axios.get(`http://localhost:8000/galleryitems/`)
+        const res = await axios.get(`https://cashew-gear-backend.herokuapp.com/galleryitems/`)
         this.galleryItems = res.data
       },
       navigateItem(itemId) {

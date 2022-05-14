@@ -150,7 +150,8 @@
     },
     methods: {
       async getOrders() {
-        const res = await axios.get(`http://localhost:8000/gearorders/`, 
+        this.$forceUpdate()
+        const res = await axios.get(`https://cashew-gear-backend.herokuapp.com/gearorders/`, 
         {headers: {
           "Authorization": "Bearer " + localStorage.getItem('access_token'),
           "Content-Type": "application/json",
@@ -164,8 +165,6 @@
         } else {
           this.showNewOrderForm = true
           this.newOrderButton = true
-          this.getStyles()
-          this.getWrestlers()
         }
       },
       cancelOrder(event) {
@@ -199,20 +198,32 @@
       },
       async deleteOrder(event) {
         event.preventDefault()
-        await axios.delete(`http://localhost:8000/gearorders/${this.selectedOrder}`)
+        await axios.delete(`https://cashew-gear-backend.herokuapp.com/gearorders/${this.selectedOrder}`, {headers: {
+          "Authorization": "Bearer " + localStorage.getItem('access_token'),
+          "Content-Type": "application/json",
+          "accept": "application/json"
+        }})
         this.resetAll()
         this.getOrders()
       },
       async handleUpdateSubmit(event) {
         event.preventDefault()
-        await axios.put(`http://localhost:8000/gearorders/${this.selectedOrder}`, this.newOrder)
+        await axios.put(`https://cashew-gear-backend.herokuapp.com/gearorders/${this.selectedOrder}`, this.newOrder, {headers: {
+          "Authorization": "Bearer " + localStorage.getItem('access_token'),
+          "Content-Type": "application/json",
+          "accept": "application/json"
+        }})
         this.resetAll()
         this.getOrders()
       },
       async handleSubmit(event) {
         event.preventDefault()
 
-        await axios.post('http://localhost:8000/gearorders/', this.newOrder).then((res) => console.log(res.data))
+        await axios.post('https://cashew-gear-backend.herokuapp.com/gearorders/', this.newOrder, {headers: {
+          "Authorization": "Bearer " + localStorage.getItem('access_token'),
+          "Content-Type": "application/json",
+          "accept": "application/json"
+        }}).then((res) => console.log(res.data))
       .catch((err) => console.log(err.data))
         this.resetAll()
         this.getOrders()

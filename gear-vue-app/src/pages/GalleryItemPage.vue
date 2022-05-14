@@ -30,7 +30,7 @@
     },
     methods: {
         async getItemDetails() {
-          const res = await axios.get(`http://localhost:8000/galleryitems/${this.$route.params.galleryitem_id}`)
+          const res = await axios.get(`https://cashew-gear-backend.herokuapp.com/galleryitems/${this.$route.params.galleryitem_id}`)
           this.itemData = res.data
       },
     }
