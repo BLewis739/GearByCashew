@@ -3,12 +3,13 @@
     <header>
       Orders Page
     </header>
+    <div class="full-orders-page-wrapper" v-if="this.orders.length!=0">
     <div class="new-order-button-wrapper" v-if="this.showNewOrderForm === false">
       <button @click="toggleShowNewOrderForm()">New Order</button>
     </div>
     <div v-else class="new-order-form">
       <form>
-        <table>
+        <table class="order-table">
           <tr>
             <td class='left'>
               Wrestler:
@@ -116,11 +117,14 @@
           <td>{{order.hasPaid}}</td>
           <td>{{order.isComplete}}</td>
         </tr>
-
       </table>
     </div>
     <div v-else>
       Loading...
+    </div>
+    </div>
+    <div v-else>
+      You do not have access to this page.
     </div>
   </div>
 </template>
@@ -146,9 +150,14 @@
       newOrderButton: false
     }),
     mounted() {
-      this.getOrders()
+      this.checkToken()
     },
     methods: {
+      checkToken() {
+        if (localStorage.getItem('access_token')) {
+          this.getOrders()
+        }
+      },
       async getOrders() {
         this.$forceUpdate()
         const res = await axios.get(`https://cashew-gear-backend.herokuapp.com/gearorders/`, 

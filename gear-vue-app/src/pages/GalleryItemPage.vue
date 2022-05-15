@@ -14,6 +14,9 @@
     <div v-else>
       Loading details...
     </div>
+    <div class="back-button-container">
+      <router-link to="/gallery" class='nav-link'>Back to Gallery</router-link>
+    </div>
   </div>
 </template>
 

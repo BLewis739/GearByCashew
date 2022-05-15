@@ -1,6 +1,6 @@
 <template>
-  <div class='card'>
-    <button @click="handleLogOut">Log Out</button>
+  <div class='logout-button'>
+    <button @click="handleLogOut" class="contact-link">Log Out</button>
   </div>
 </template>
 
