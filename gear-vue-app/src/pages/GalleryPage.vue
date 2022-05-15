@@ -1,6 +1,6 @@
 <template>
   <div class='page-wrapper'>
-    <header>
+    <header class="home-page-header">
       Gallery
     </header>
     <div class='gallery-items-wrapper'>

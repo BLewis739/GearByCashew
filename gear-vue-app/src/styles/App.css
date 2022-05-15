@@ -10,6 +10,7 @@
 
 .page-wrapper {
   font-family: Arial, Helvetica, sans-serif;
+  width: 95%;
 }
 
 nav {
@@ -101,6 +102,7 @@ header {
 .photo-container {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .detail-page-photo img {
@@ -299,4 +301,9 @@ header {
 
 .logout-button {
   margin-top: 30px;
+}
+
+.about-text-wrapper {
+  text-align: center;
+  margin: 20px 10%;
 }
