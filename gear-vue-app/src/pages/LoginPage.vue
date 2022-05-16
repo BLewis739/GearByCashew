@@ -1,6 +1,6 @@
 <template>
   <div class='page-wrapper'>
-    <header>
+    <header class='home-page-header'>
       Admin Login
     </header>
     <div v-if="isAuthenticated" class='log-out'>
@@ -10,16 +10,16 @@
     <div v-else class='login-form'>
       <form>
         <div>
-          <input type="text" name="username" @change="setLoginFields($event)"/>
-          <label>Username</label>
+          <input type="text" name="username" @change="setLoginFields($event)" class="login-field"/>
+          <br><label class="login-label">Username</label>
         </div>
 
         <div>
-          <input type="password" name="password" @change="setLoginFields($event)"/>
-          <label>Password</label>
+          <input type="password" name="password" @change="setLoginFields($event)" class="login-field"/>
+          <br><label class="login-label">Password</label>
         </div>
 
-        <button type="button" @click="loginUser($event)">Sign in</button>
+        <button type="button" @click="loginUser($event)" class='login-button'>Sign in</button>
       </form>
     </div>
   </div>
@@ -79,7 +79,11 @@
         })
       .catch((err) => console.log(err.data))
         this.resetLoginFields()
-        this.navigateToOrders()
+        if (this.isAuthenticated) {
+          this.navigateToOrders()
+        } else {
+          alert("Invalid login")
+        }
       },
       resetLoginFields() {
         this.loginCredentials.username = null

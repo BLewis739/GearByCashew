@@ -1,6 +1,6 @@
 <template>
   <div class='page-wrapper'>
-    <header>
+    <header class='home-page-header'>
       Orders Page
     </header>
     <div class="full-orders-page-wrapper" v-if="this.orders.length!=0">
@@ -82,8 +82,8 @@
             <button @click="handleUpdateSubmit($event)">Update This Gear Order</button>
           </div>
         </div>
-        <div v-else>
-          Complete all fields
+        <div v-else class="complete-all-fields">
+          Please complete all fields
         </div>
         <div v-if="selectedOrder">
           <button @click="deleteOrder($event)">Delete Order</button>

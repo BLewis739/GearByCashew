@@ -10,7 +10,7 @@
 
 .page-wrapper {
   font-family: Arial, Helvetica, sans-serif;
-  width: 95%;
+  margin: 0 5%;
 }
 
 nav {
@@ -173,6 +173,15 @@ header {
   background-color: #00365f;
 }
 
+.complete-all-fields {
+  margin: 20px 0;
+  border: #f6e01f solid 5px;
+  padding: 15px 0;
+  font-size: 24px;
+  background-color: #d10f0f;
+  color:#f6e01f
+}
+
 /* /////////////// */
 /* Home Page Styling */
 /* /////////////// */
@@ -303,7 +312,37 @@ header {
   margin-top: 30px;
 }
 
+.login-button {
+  font-size: 20px;
+  color: #fff986;
+  margin: 15px 0;
+  height: 60px;
+  width:250px;
+  border: #f6e01f solid 5px;
+  background-color: #00365f;
+}
+
+.login-button:hover {
+  background-color: #fff986;
+  color:black;
+}
+
 .about-text-wrapper {
   text-align: center;
   margin: 20px 10%;
+}
+
+.about-page-wrapper {
+  margin: 0 5%;
+}
+
+.login-field {
+  width: 300px;
+  height: 40px;
+  margin-top: 20px;
+  font-size: 30px;
+}
+
+.login-label {
+  margin-top: 20px;
 }

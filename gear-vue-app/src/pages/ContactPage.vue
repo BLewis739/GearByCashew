@@ -1,13 +1,12 @@
 <template>
   <div class='page-wrapper'>
-    <header>
+    <header class='home-page-header'>
       Contact Us
     </header>
     <div class='contact-description'>
-      Explain why to contact
     </div>
     <div class='contact-form-wrapper'>
-      Contact Form
+      Coming soon...
     </div>
   </div>
 </template>

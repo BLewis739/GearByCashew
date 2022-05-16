@@ -1,5 +1,5 @@
 <template>
-  <div class='page-wrapper'>
+  <div class='about-page-wrapper'>
     <header class="home-page-header">
       About
     </header>
